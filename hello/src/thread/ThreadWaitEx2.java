@@ -10,8 +10,9 @@ import java.util.ArrayList;
  * 손님 스레드가 원하는 음식이 테이블에 없으면 failed to eat 을 출력하고,
  * 테이블에 음식이 하나도 없으면 0.5초마다 음식이 추가되는지 확인하면서 기다리도록 했다.
  * 
+ * 문제..
  * 그런데, 요리사 스레드는 왜 음식을 추가하지 않고 손님 스레드를 계속 기다리게 하는 걸까?
- * -> 손님 스레드가 테이블 객체의 lock 을 쥐고 기다리기 대문이다.
+ * -> 손님 스레드가 테이블 객체의 lock 을 쥐고 기다리기 때문이다.
  * -> 요리사 스레드가 음식을 새로 추가하려해도 테이블 객체의 락을 얻을 수가 없어서 불가능하다.
  * 
  * 해결 : wait() 과 notify() 사용
@@ -24,7 +25,7 @@ public class ThreadWaitEx2 {
 
         new Thread(new Cook2(table), "COOK1").start();
         new Thread(new Customer2(table, "donut"), "CUST1").start();
-        new Thread(new Customer2(table, "burger"), "CUST2").start();
+        new Thread(new Customer2(table, "bugger"), "CUST2").start();
 
         Thread.sleep(3000);  // 3초 후 강제 종료
         System.exit(0); // 프로그램 전체 종료(모든 스레드 종료)

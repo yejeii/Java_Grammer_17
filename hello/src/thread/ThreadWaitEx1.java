@@ -8,7 +8,7 @@ public class ThreadWaitEx1 {
 
         new Thread(new Cook2(table), "COOK1").start();
         new Thread(new Customer2(table, "donut"), "CUST1").start();
-        new Thread(new Customer2(table, "burger"), "CUST2").start();
+        new Thread(new Customer2(table, "bugger"), "CUST2").start();
 
         Thread.sleep(5000);  // 5초 후 강제 종료
         System.exit(0); // 프로그램 전체 종료(모든 스레드 종료)
