@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Q2559_solve {
+public class Q2559_googling {
    public static void main(String args[]) {
       Scanner in = new Scanner(System.in);
       int N = in.nextInt();

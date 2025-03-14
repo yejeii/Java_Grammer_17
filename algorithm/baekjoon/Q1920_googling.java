@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Q1920_solve {
+public class Q1920_googling {
    public static void main(String[] args) {
       Scanner in = new Scanner(System.in);
       StringBuilder sb = new StringBuilder();
